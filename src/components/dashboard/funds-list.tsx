@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Eye } from "lucide-react";
 import Link from "next/link";
+// import { useWalletContext } from "@/context/WalletContext";
 
 interface Fund {
   id: string;
@@ -36,6 +37,8 @@ const funds: Fund[] = [
 ];
 
 export function FundsList() {
+  // const {walletAddress} = useWalletContext();
+  // console.log(walletAddress);
   return (
     <div className="space-y-4">
       {funds.map((fund) => (

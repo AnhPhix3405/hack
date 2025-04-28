@@ -11,37 +11,44 @@ import {
   LogOut 
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useWalletContext } from '@/context/WalletContext';
 
 interface SidebarProps {
   className?: string;
 }
 
+function formatAddress(address: string) {
+  return address.length > 20
+    ? `${address.slice(0, 14)}...${address.slice(-3)}`
+    : address;
+}
+
 export function Sidebar({ className }: SidebarProps) {
   const pathname = usePathname();
-
+  const {walletAddress } = useWalletContext();
   const routes = [
     {
-      href: '/dashboard',
+      href: `/dashboard/${walletAddress}`, // added leading slash
       icon: LayoutDashboard,
       title: 'Tổng quan',
     },
     {
-      href: '/finances',
+      href: `/finances`,
       icon: Wallet,
       title: 'Tài chính',
     },
     {
-      href: '/profile',
+      href: `/profile`,
       icon: User,
       title: 'Hồ sơ',
     },
     {
-      href: '/funds',
+      href: `/funds`,
       icon: List,
       title: 'Danh sách quỹ',
     },
   ];
-
+  
   return (
     <div className={cn(
       "flex flex-col h-full bg-white dark:bg-gray-950 border-r border-primary/10",
@@ -58,6 +65,7 @@ export function Sidebar({ className }: SidebarProps) {
             <Link
               key={route.href}
               href={route.href}
+              prefetch={false}
               className={cn(
                 "flex items-center gap-x-2 text-slate-600 dark:text-slate-400 text-sm font-medium p-3 hover:text-primary dark:hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10 rounded-md transition",
                 pathname === route.href && "text-primary dark:text-primary bg-primary/5 dark:bg-primary/10"
@@ -77,7 +85,7 @@ export function Sidebar({ className }: SidebarProps) {
           </Avatar>
           <div className="space-y-1">
             <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-              0x1a2b...3c4d
+              {formatAddress(walletAddress)}
             </p>
           </div>
         </div>

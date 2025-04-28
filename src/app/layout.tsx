@@ -3,7 +3,11 @@ import { HomeHeader } from "@/components/home/home-header";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./client-layout";
+<<<<<<< HEAD
 
+=======
+import { WalletProvider } from "@/context/WalletContext";
+>>>>>>> b970b0c (hehehe)
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,7 +33,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientLayout>{children}</ClientLayout>
+        
+        <ClientLayout>
+        <WalletProvider>
+          {children}
+          </WalletProvider>
+          </ClientLayout>
+        
       </body>
     </html>
   );

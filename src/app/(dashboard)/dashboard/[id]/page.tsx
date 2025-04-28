@@ -14,14 +14,11 @@ import { PopularProposals } from "@/components/dashboard/popular-proposals";
 import { BudgetAllocation } from "@/components/dashboard/budget-allocation";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import {useWallet} from "@meshsdk/react";
 
 
 
 export default function DashboardPage() {
   const router = useRouter();
-  const {connected} = useWallet();
-  console.log(connected);
   return (
     <div className="p-6 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">

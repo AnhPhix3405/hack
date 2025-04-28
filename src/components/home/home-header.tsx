@@ -1,11 +1,12 @@
 "use client"
 import { useWalletList, useWallet } from '@meshsdk/react';
-import { BrowserWallet, IWallet, AssetExtended } from "@meshsdk/core";
+import {  IWallet, AssetExtended } from "@meshsdk/core";
 import { checkSignature, generateNonce } from "@meshsdk/core";
 import { useEffect, useState, useRef } from 'react';
 import Link from "next/link";
 import { Wallet, Copy, ExternalLink, LogOut, ChevronDown } from "lucide-react";
 import { Button } from '../ui/button';
+// import { useRouter } from 'next/navigation';
 
 
 export function HomeHeader() {
@@ -17,6 +18,7 @@ export function HomeHeader() {
   const [walletBalance, setWalletBalance] = useState<{ lovelace: string, assets: AssetExtended[] }>({ lovelace: "0", assets: [] });
   const walletDetailsRef = useRef<HTMLDivElement>(null);
   const wallets = useWalletList();
+  // const router = useRouter();
   
   // Close wallet details popup when clicking outside
   useEffect(() => {
@@ -100,7 +102,8 @@ export function HomeHeader() {
           if (result) {
             setIsAuthenticated(true);
             // Thay alert bằng toast hoặc thông báo khác
-            console.log("Wallet connected and authenticated successfully!");
+            console.log("Wallet connected and authenticated successfully!");  
+            // router.push(`/dashboard/${addr}`)
           } else {
             alert(
               "Failed to verify your signature after multiple attempts. Please reconnect your wallet."
@@ -143,12 +146,28 @@ export function HomeHeader() {
     window.open(`https://cexplorer.io/address/${walletAddress}`, "_blank");
   };
 
+
+
   return (
     <header className="w-full px-4 sm:px-6 lg:px-8 py-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-primary/10">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <span className="text-2xl font-bold gradient-text">BlockFund</span>
         </Link>
+        <nav className="hidden md:flex space-x-4">
+            <Link href="/" className="text-sm font-medium hover:text-primary">
+              Trang Chủ
+            </Link>
+            <Link href="/dashboard" className="text-sm font-medium hover:text-primary">
+              Tổng Quan
+            </Link>
+            <Link href="/finances" className="text-sm font-medium hover:text-primary">
+              Tài Chính
+            </Link>
+            <Link href="/funds" className="text-sm font-medium hover:text-primary">
+              Danh Sách Quỹ
+            </Link>
+          </nav>
 
         <div className="relative">
           {connected && isAuthenticated ? (

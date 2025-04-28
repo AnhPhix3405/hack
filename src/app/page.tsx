@@ -1,7 +1,11 @@
-import Image from "next/image";
-import { HomeHeader } from "@/components/home/home-header";
+import Link from 'next/link';
+import { HomeHeader } from '@/components/home/home-header';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Shield, BarChart3, Users } from 'lucide-react';
+
 export default function Home() {
   return (
+<<<<<<< HEAD
     <>
     
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -26,32 +30,58 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
+=======
+    <div className="min-h-screen flex flex-col">
+      <HomeHeader />
+      
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
+              Quản lý quỹ phi tập trung
+            </h1>
+            <h2 className="text-2xl sm:text-3xl font-medium text-white/90 mb-6">
+              Minh bạch và Hiệu quả
+            </h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto mb-10">
+              Nền tảng quản lý quỹ phi tập trung giúp tổ chức và cá nhân quản lý tài sản một cách minh bạch, hiệu quả và an toàn thông qua công nghệ blockchain.
+            </p>
+            <Link href="/dashboard">
+              <Button size="lg" variant="secondary" className="group hover:scale-105 transition-transform">
+                Sẵn sàng bắt đầu ngay
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+          </div>
+        </section>
+>>>>>>> b970b0c (hehehe)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Features Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-background">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 gradient-text">
+              Tính năng nổi bật
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <FeatureCard 
+                icon={<Shield className="h-10 w-10 text-primary" />}
+                title="Bảo mật và Minh bạch"
+                description="Dữ liệu được mã hóa và lưu trữ trên blockchain đảm bảo tính minh bạch và an toàn tuyệt đối."
+              />
+              <FeatureCard 
+                icon={<BarChart3 className="h-10 w-10 text-[hsl(var(--chart-2))]" />}
+                title="Quản lý Quỹ Thông minh"
+                description="Theo dõi và quản lý quỹ một cách hiệu quả với các công cụ phân tích dữ liệu và bảng điều khiển trực quan."
+              />
+              <FeatureCard 
+                icon={<Users className="h-10 w-10 text-[hsl(var(--chart-3))]" />}
+                title="Quản trị Phi tập trung"
+                description="Mọi quyết định đều thông qua biểu quyết công khai, đảm bảo quyền tự chủ của cộng đồng."
+              />
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
@@ -63,10 +93,8 @@ export default function Home() {
         </div>
       </footer>
     </div>
-    </>
   );
 }
-
 
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
