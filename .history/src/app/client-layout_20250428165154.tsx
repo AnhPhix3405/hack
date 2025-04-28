@@ -8,9 +8,8 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   return (
-    
+    <HomeHeader></HomeHeader>
     <MeshProvider>
-        <HomeHeader />
       {children}
     </MeshProvider>
   );

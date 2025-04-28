@@ -10,7 +10,6 @@ export default function ClientLayout({
   return (
     
     <MeshProvider>
-        <HomeHeader />
       {children}
     </MeshProvider>
   );
