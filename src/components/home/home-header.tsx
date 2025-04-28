@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Wallet } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import {useWalletList} from '@meshsdk/react';
 import { useWallet } from '@meshsdk/react';
 // import { CardanoWallet } from '@meshsdk/react';
