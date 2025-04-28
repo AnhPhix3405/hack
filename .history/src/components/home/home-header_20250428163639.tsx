@@ -1,12 +1,13 @@
 "use client"
-import { useWalletList, useWallet } from '@meshsdk/react';
-import { BrowserWallet, IWallet, AssetExtended } from "@meshsdk/core";
-import { checkSignature, generateNonce } from "@meshsdk/core";
-import { useEffect, useState, useRef } from 'react';
-import Link from "next/link";
-import { Wallet, Copy, ExternalLink, LogOut, ChevronDown } from "lucide-react";
-import { Button } from '../ui/button';
 
+import Link from 'next/link';
+import { useEffect, useState, useRef } from 'react';
+import { Button } from '@/components/ui/button';
+import { Wallet } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import {useWalletList} from '@meshsdk/react';
+import { useWallet } from '@meshsdk/react';
+// import { CardanoWallet } from '@meshsdk/react';
 
 export function HomeHeader() {
   const { connect, connected, disconnect, name, wallet } = useWallet();

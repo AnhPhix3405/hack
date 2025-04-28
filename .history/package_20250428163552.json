@@ -1,0 +1,78 @@
+{
+  "name": "hk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+<<<<<<< HEAD
+    "@meshsdk/core": "^1.9.0-beta-39",
+    "@meshsdk/react": "^1.9.0-beta-39",
+    "@radix-ui/react-avatar": "^1.1.7",
+    "@radix-ui/react-progress": "^1.1.4",
+    "@radix-ui/react-select": "^2.2.2",
+    "@radix-ui/react-tabs": "^1.1.9",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.503.0",
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.3",
+    "tailwind-merge": "^3.2.0"
+=======
+    "@chakra-ui/react": "^3.16.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@meshsdk/core": "^1.9.0-beta-39",
+    "@meshsdk/react": "^1.9.0-beta-39",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "@radix-ui/react-avatar": "^1.1.7",
+    "@radix-ui/react-collapsible": "^1.1.8",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tippyjs/react": "^4.2.6",
+    "ark-ui": "^0.0.4",
+    "chart.js": "^4.4.9",
+    "class-variance-authority": "^0.7.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.8.0",
+    "install": "^0.13.0",
+    "lucide-react": "^0.503.0",
+    "mui": "^0.0.1",
+    "next": "15.3.1",
+    "next-themes": "^0.4.6",
+    "npm": "^11.3.0",
+    "radix-ui": "^1.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.15.3",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss-animate": "^1.0.7"
+>>>>>>> f18254fbacda2e54c87c8f403293c96b159f435c
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+<<<<<<< HEAD
+=======
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.0.14",
+    "lightningcss-linux-x64-gnu": "^1.29"
+>>>>>>> f18254fbacda2e54c87c8f403293c96b159f435c
+  }
+}

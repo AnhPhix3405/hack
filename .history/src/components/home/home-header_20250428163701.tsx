@@ -5,7 +5,6 @@ import { checkSignature, generateNonce } from "@meshsdk/core";
 import { useEffect, useState, useRef } from 'react';
 import Link from "next/link";
 import { Wallet, Copy, ExternalLink, LogOut, ChevronDown } from "lucide-react";
-import { Button } from '../ui/button';
 
 
 export function HomeHeader() {
